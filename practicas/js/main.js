@@ -16,3 +16,13 @@ document.querySelectorAll(".video").forEach((caja) => {
 
 // 3. Año del pie de página
 document.getElementById("anio").textContent = new Date().getFullYear();
+
+// 4. Logos: si un logo no carga, se muestra el nombre de la empresa en su lugar
+document.querySelectorAll(".logo-emp").forEach((img) => {
+  img.addEventListener("error", () => {
+    const texto = document.createElement("span");
+    texto.className = "logo-nombre";
+    texto.textContent = img.alt.replace("Logo de ", "");
+    img.replaceWith(texto);
+  });
+});
