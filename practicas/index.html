@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html> le dice al navegador que este archivo es HTML5 -->
+<html lang="es"> <!-- lang="es": idioma de la página (ayuda a buscadores y lectores de pantalla) -->
+<head>
+  <meta charset="UTF-8"> <!-- Permite acentos y ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace la página responsive en celular -->
+  <meta name="description" content="Cuatro empresas de Nuevo León donde quiero hacer prácticas profesionales.">
+  <title>Mis prácticas profesionales | 4 empresas en Nuevo León</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css"> <!-- Conecta el CSS -->
+  <script src="js/main.js" defer></script> <!-- Conecta el JavaScript; defer = carga al final -->
+</head>
+<body>
+  <!-- header: cabecera. nav: menú de navegación. Los href con # saltan a una sección con ese id -->
+  <header class="cabecera">
+    <a class="logo" href="#inicio">Prácticas 2026</a>
+    <button id="btn-menu" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#comparativa">Comparativa</a></li>
+        <li><a href="#deere">John Deere</a></li>
+        <li><a href="#schneider">Schneider Electric</a></li>
+        <li><a href="#ibm">IBM</a></li>
+        <li><a href="#softtek">Softtek</a></li>
+        <li><a href="#pasos">Cómo postular</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main: el contenido principal. section: bloque temático. h1 es el título más importante (solo uno) -->
+  <main id="inicio">
+    <section class="hero">
+      <h1>Cuatro empresas de Nuevo León para mis prácticas profesionales</h1>
+      <p>Busco prácticas en <strong>desarrollo de software</strong>, <strong>sistemas embebidos</strong> y <strong>desarrollo web</strong>, de forma presencial, híbrida o remota. Aquí junté lo que encontré de cada empresa.</p>
+      <p><small>Información de portales de empleo y sitios oficiales (noviembre de 2026). Lo marcado como <mark>por verificar</mark> debe confirmarse en LinkedIn.</small></p>
+    </section>
+
+    <section id="comparativa">
+      <h2>Comparativa rápida</h2>
+      <!-- table: tabla. caption: título. thead/tbody: encabezado y cuerpo. th: celda de encabezado. td: celda normal -->
+      <div class="tabla-scroll">
+        <table>
+          <caption>Las 4 empresas lado a lado</caption>
+          <thead>
+            <tr><th scope="col">Empresa</th><th scope="col">Mi área de interés</th><th scope="col">Dónde</th><th scope="col">Lo que vi</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><a href="#deere">John Deere</a></th><td>Software y embebidos</td><td>Garza García</td><td>Vacantes de software, datos y embebidos; prácticas <mark>por verificar</mark></td></tr>
+            <tr><th scope="row"><a href="#schneider">Schneider Electric</a></th><td>Software y automatización</td><td>Monterrey (PIIT)</td><td>Práctica de SAP Developer (feb. 2026)</td></tr>
+            <tr><th scope="row"><a href="#ibm">IBM</a></th><td>Software y web</td><td>CDMX y Guadalajara; Monterrey <mark>por verificar</mark></td><td>Programa Blue Journey</td></tr>
+            <tr><th scope="row"><a href="#softtek">Softtek</a></th><td>Software y web</td><td>Monterrey (sede)</td><td>Prácticas en varias áreas; desarrollo <mark>por verificar</mark></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- article: contenido independiente (una empresa). figure + img + figcaption: imagen con pie. dl/dt/dd: lista de datos -->
+    <section id="empresas">
+      <article id="deere">
+        <h2>John Deere</h2>
+        <figure>
+          <img src="img/deere.png" alt="Logo de John Deere" width="160" height="80" loading="lazy">
+          <figcaption>Logo: sitio oficial de <a href="https://www.deere.com" target="_blank" rel="noopener">John Deere</a>.</figcaption>
+        </figure>
+        <p>Fabricante de maquinaria agrícola y de construcción. En Monterrey tiene planta y un centro de ingeniería que, según el Tec de Monterrey, <em>inició en 2010</em>.</p>
+        <dl>
+          <dt>Giro</dt><dd>Maquinaria, tecnología agrícola e industria inteligente</dd>
+          <dt>Ubicación</dt><dd>San Pedro Garza García, N. L. (híbrido)</dd>
+          <dt>Tecnologías</dt><dd>Software embebido, datos, automatización, nube e IoT</dd>
+          <dt>Por qué me interesa</dt><dd>Tiene vacantes de software embebido en Monterrey, que une mis dos áreas.</dd>
+        </dl>
+        <div class="video" data-id="" data-buscar="John Deere México"><a href="https://www.youtube.com/results?search_query=John+Deere+M%C3%A9xico" target="_blank" rel="noopener">Ver videos de John Deere en YouTube</a></div>
+        <p><a href="https://jobs.deere.com" target="_blank" rel="noopener">Portal de empleo</a> · <a href="https://www.linkedin.com/company/deere" target="_blank" rel="noopener">LinkedIn</a></p>
+      </article>
+
+      <article id="schneider">
+        <h2>Schneider Electric</h2>
+        <figure>
+          <img src="img/schneider.png" alt="Logo de Schneider Electric" width="160" height="80" loading="lazy">
+          <figcaption>Logo: sitio oficial de <a href="https://www.se.com/mx/es/" target="_blank" rel="noopener">Schneider Electric México</a>.</figcaption>
+        </figure>
+        <p>Empresa de gestión de energía y automatización. Su Centro de Desarrollo e Innovación está en el Parque de Investigación e Innovación Tecnológica (<abbr title="Parque de Investigación e Innovación Tecnológica">PIIT</abbr>) de Monterrey desde 2013.</p>
+        <dl>
+          <dt>Giro</dt><dd>Electricidad, automatización industrial y digitalización</dd>
+          <dt>Ubicación</dt><dd>Monterrey, N. L.</dd>
+          <dt>Tecnologías</dt><dd>IIoT, software industrial, SAP</dd>
+          <dt>Por qué me interesa</dt><dd>Publicó una práctica de SAP Developer en Monterrey y trabaja con universidades locales.</dd>
+        </dl>
+        <div class="video" data-id="" data-buscar="Schneider Electric Monterrey"><a href="https://www.youtube.com/results?search_query=Schneider+Electric+Monterrey" target="_blank" rel="noopener">Ver videos de Schneider Electric en YouTube</a></div>
+        <p><a href="https://www.se.com/mx/es/about-us/careers/" target="_blank" rel="noopener">Carreras</a> · <a href="https://www.linkedin.com/company/schneider-electric" target="_blank" rel="noopener">LinkedIn</a></p>
+      </article>
+
+      <article id="ibm">
+        <h2>IBM</h2>
+        <figure>
+          <img src="img/ibm.png" alt="Logo de IBM" width="160" height="80" loading="lazy">
+          <figcaption>Logo: sitio oficial de <a href="https://www.ibm.com/mx-es" target="_blank" rel="noopener">IBM México</a>.</figcaption>
+        </figure>
+        <p>Empresa de tecnología y consultoría. Su programa de prácticas se llama <strong>Blue Journey</strong>.</p>
+        <dl>
+          <dt>Giro</dt><dd>Nube híbrida, inteligencia artificial y consultoría</dd>
+          <dt>Ubicación</dt><dd>Las vacantes que vi son de CDMX y Guadalajara; Monterrey <mark>por verificar</mark></dd>
+          <dt>Requisitos vistos</dt>
+          <dd><ul>
+            <li>De 30 a 35 horas semanales</li>
+            <li>Experiencia en algún lenguaje, sobre todo Java</li>
+            <li>Algoritmos y estructuras de datos</li>
+            <li>Inglés avanzado</li>
+          </ul></dd>
+          <dt>Por qué me interesa</dt><dd>Hay prácticas de desarrollo con Angular, Node.js, Java y Python.</dd>
+        </dl>
+        <div class="video" data-id="" data-buscar="IBM Blue Journey México"><a href="https://www.youtube.com/results?search_query=IBM+Blue+Journey+M%C3%A9xico" target="_blank" rel="noopener">Ver videos de IBM en YouTube</a></div>
+        <p><a href="https://www.ibm.com/careers" target="_blank" rel="noopener">Carreras</a> · <a href="https://www.linkedin.com/company/ibm" target="_blank" rel="noopener">LinkedIn</a></p>
+      </article>
+
+      <article id="softtek">
+        <h2>Softtek</h2>
+        <figure>
+          <img src="img/softtek.png" alt="Logo de Softtek" width="160" height="80" loading="lazy">
+          <figcaption>Logo: sitio oficial de <a href="https://www.softtek.com" target="_blank" rel="noopener">Softtek</a>.</figcaption>
+        </figure>
+        <p>Empresa de servicios de TI con sede en Monterrey, fundada en 1982. Fue la primera en introducir el modelo <em>Nearshore</em> y opera en más de 20 países.</p>
+        <dl>
+          <dt>Giro</dt><dd>Servicios de tecnología, calidad de software y DevOps</dd>
+          <dt>Ubicación</dt><dd>Monterrey, N. L. (sede)</dd>
+          <dt>Prácticas vistas</dt><dd>Compras y administración en Monterrey; desarrollo <mark>por verificar</mark></dd>
+          <dt>Por qué me interesa</dt><dd>Es una empresa local con proyectos de software para clientes globales.</dd>
+        </dl>
+        <div class="video" data-id="" data-buscar="Softtek"><a href="https://www.youtube.com/results?search_query=Softtek" target="_blank" rel="noopener">Ver videos de Softtek en YouTube</a></div>
+        <p><a href="https://www.softtek.com" target="_blank" rel="noopener">Sitio oficial</a> · <a href="https://www.linkedin.com/company/softtek" target="_blank" rel="noopener">LinkedIn</a></p>
+      </article>
+    </section>
+
+    <section id="pasos">
+      <h2>Cómo voy a postular</h2>
+      <!-- ol: lista ordenada (con números). details/summary: bloque que se abre y se cierra -->
+      <ol>
+        <li>Revisar cada empresa en LinkedIn y confirmar vacantes.</li>
+        <li>Actualizar mi CV.</li>
+        <li>Postular en el portal oficial.</li>
+        <li>Dar seguimiento por correo.</li>
+      </ol>
+      <details>
+        <summary>Aclaración sobre la información</summary>
+        <p>Los datos salen de portales de empleo y sitios oficiales. Las vacantes cambian, así que hay que confirmar fechas y requisitos antes de postular.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- aside: contenido complementario. footer: pie de página. address: datos de contacto -->
+  <aside class="nota">
+    <p>Esta página es parte de un proyecto de la FIME, UANL.</p>
+  </aside>
+  <footer>
+    <p><small>&copy; <time id="anio" datetime="2026">2026</time> · Proyecto escolar de prácticas profesionales.</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Variables: colores y medidas que usamos en toda la página */
+:root{--azul:#123A63;--azul2:#1F6FB2;--gris:#5B6B7B;--fondo:#F4F6F8;--borde:#D3DBE3;--marca:#FFE9A8;--blanco:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:400 1rem/1.6 "Public Sans",system-ui,sans-serif;color:#1c2733;background:var(--fondo)}
+a{color:var(--azul2)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--azul2);outline-offset:2px}
+/* Cabecera fija con el menú */
+.cabecera{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem 1.25rem;background:var(--azul);color:var(--blanco)}
+.logo{font-weight:800;color:var(--blanco);text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:1rem;margin:0;padding:0;list-style:none}
+nav a{color:var(--blanco);text-decoration:none;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+#btn-menu{display:none;background:none;border:1px solid var(--blanco);color:var(--blanco);padding:.35rem .8rem;border-radius:4px;font:inherit}
+/* Contenido */
+main,.nota,footer{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+.hero{padding:3rem 0 1rem}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;font-weight:800;color:var(--azul);margin:0 0 1rem;max-width:20ch}
+h2{font-size:1.6rem;color:var(--azul);margin:2.5rem 0 1rem}
+p{max-width:70ch}
+mark{background:var(--marca);padding:0 .25em}
+/* Tabla */
+.tabla-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--blanco);font-size:.95rem}
+caption{text-align:left;color:var(--gris);padding-bottom:.5rem}
+th,td{padding:.7rem .8rem;border:1px solid var(--borde);text-align:left;vertical-align:top}
+thead th{background:var(--azul);color:var(--blanco)}
+/* Cada empresa */
+article{background:var(--blanco);border:1px solid var(--borde);border-left:6px solid var(--azul2);border-radius:6px;padding:1.5rem;margin:1.5rem 0}
+article h2{margin-top:0}
+figure{margin:0 0 1rem}
+img{max-width:100%;height:auto;background:var(--fondo);min-height:40px}
+figcaption{font-size:.85rem;color:var(--gris)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.25rem}
+dt{font-weight:600}
+dd{margin:0}
+.video{margin:1rem 0}
+.video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:6px}
+details{background:var(--blanco);border:1px solid var(--borde);border-radius:6px;padding:.75rem 1rem}
+summary{cursor:pointer;font-weight:600}
+.nota{margin-top:2rem;color:var(--gris)}
+footer{padding-bottom:2rem;color:var(--gris)}
+/* Celular */
+@media (max-width:700px){
+  #btn-menu{display:block}
+  nav{width:100%}
+  nav ul{display:none;flex-direction:column;gap:.5rem;padding-top:.5rem}
+  nav ul.abierto{display:flex}
+  dl{grid-template-columns:1fr}
+  dt{margin-top:.5rem}
+}
