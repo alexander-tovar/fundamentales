@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html> le dice al navegador que este archivo es HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Permite acentos y ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace la página responsive -->
+  <meta name="description" content="Cuatro becas a las que quiero aplicar: facultad, universidad, empresa y gobierno.">
+  <title>Becas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <a class="logo" href="#inicio">AF7</a>
+    <button id="btn-menu" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#comparador">Comparador</a></li>
+        <li><a href="#calendario">Fechas</a></li>
+        <li><a href="#beca-t">Facultad</a></li>
+        <li><a href="#fundacion">Uni</a></li>
+        <li><a href="#santander">Empresa</a></li>
+        <li><a href="#gobierno">Gobierno</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <h1>Cuatro becas a las que podría aplicar</h1>
+      <p>Esta página reúne cuatro becas distintas, de lo más cercano a lo más amplio: mi <strong>facultad</strong>, mi <strong>uni</strong>, una <strong>empresa</strong> y el <strong>gobierno</strong>.</p>
+      <p>De cada beca una hay información sobre quién la otorga, cuánto apoya, qué piden y cómo se solicita. La información se encuentra en las páginas oficiales y de portales de becas consultados en octubre de 2026.</p>
+      <!-- ol: lista ordenada. Aquí funciona como una escalera de cuatro niveles -->
+      <ol class="escalera">
+        <li class="fime"><a href="#beca-t"><small>1er sector</small><strong>Facultad</strong><span>Beca-T</span></a></li>
+        <li class="uanl"><a href="#fundacion"><small>2do sector</small><strong>Uni</strong><span>Beca de Sostenimiento</span></a></li>
+        <li class="san"><a href="#santander"><small>3er sector</small><strong>Empresa</strong><span>Becas Santander</span></a></li>
+        <li class="gob"><a href="#gobierno"><small>4to sector</small><strong>Gobierno</strong><span>Escribiendo el Futuro</span></a></li>
+      </ol>
+    </section>
+
+    <section id="comparador">
+      <h2>Comparador de apoyos</h2>
+      <p>Las barras comparan lo que se recibe <em>en cada pago</em>.</p>
+      <ul class="barras">
+        <li class="uanl"><span class="et">Fundación UANL</span><span class="barra"><i style="width:17%"></i></span><span class="val">$1,500 por mes</span></li>
+        <li class="gob"><span class="et">Escribiendo el Futuro</span><span class="barra"><i style="width:64%"></i></span><span class="val">$5,800 por bimestre</span></li>
+        <li class="san"><span class="et">Santander</span><span class="barra"><i style="width:100%"></i></span><span class="val">$9,000 en un solo pago</span></li>
+      </ul>
+      <p><small>La Beca-T no aparece porque no se paga en pesos: da un porcentaje de beca, de 25% hasta 100%.</small></p>
+    </section>
+
+    <section id="calendario">
+      <h2>Fechas importantes</h2>
+      <div class="tabla-scroll">
+        <table>
+          <thead><tr><th scope="col">Beca</th><th scope="col">Periodo conocido</th><th scope="col">Estado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Beca-T</th><td>Antes de iniciar el semestre</td><td>Cerrada</td></tr>
+            <tr><th scope="row">Fundación UANL</th><td>Según disponibilidad del programa</td><td>Cerrada</td></tr>
+            <tr><th scope="row">Santander</th><td><time datetime="2026-05-04">4 de mayo</time> al <time datetime="2026-07-20">20 de julio</time></td><td>Cerrada; esperar la siguiente</td></tr>
+            <tr><th scope="row">Escribiendo el Futuro</th><td>16 al 27 de febrero y 18 al 30 de septiembre</td><td>Cerrada; esperar la siguiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="becas">
+      <article id="beca-t" class="fime">
+        <p class="nivel">1er sector: Facultad</p>
+        <h2>Beca-T</h2>
+        <!-- figure + img + figcaption: imagen con pie de foto -->
+        <figure>
+          <img class="logo-emp" src="img/beca-t.png" alt="Logo de Facultad de Ingeniería Mecánica y Eléctrica, UANL" height="70" loading="lazy">
+        </figure>
+        <p>La Beca-T es un programa institucional de la FIME que premia a quienes llevan su carrera al corriente. A diferencia de otras becas, no da una cantidad fija en pesos: otorga un <strong>porcentaje de beca</strong> que crece conforme avanzas de semestre.</p>
+        <p>Es la más cercana a mí porque la administra mi propia facultad y depende de algo que sí puedo controlar: aprobar todas mis materias en primera oportunidad.</p>
+        <!-- dl / dt / dd: lista de datos con su descripción -->
+        <dl>
+          <dt>Apoyo</dt><dd>Porcentaje de beca, del 25% al 100%</dd>
+          <dt>Para quién</dt><dd>Alumnos de 5° semestre a cursar en adelante, con todas las materias del kárdex en primera oportunidad o máximo 1 extraordinario</dd>
+          <dt>Cómo se solicita</dt><dd>Por correo a fimebecat@gmail.com, con asunto "Matrícula"; en el cuerpo van nombre, matrícula y tipo de beca; se adjunta un solo PDF con aviso de pago y kárdex del SIASE</dd>
+          <dt>Fechas</dt><dd>Antes de iniciar el semestre</dd>
+        </dl>
+        <!-- table: tabla de datos. caption: título. thead/tbody: encabezado y cuerpo -->
+        <table>
+          <caption>Porcentaje de beca según el semestre a cursar</caption>
+          <thead><tr><th scope="col">Semestre</th><th scope="col">Todas en primera oportunidad</th><th scope="col">Todas en primera, salvo una en segunda</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">5° y 6°</th><td>50%</td><td>25%</td></tr>
+            <tr><th scope="row">7° y 8°</th><td>75%</td><td>50%</td></tr>
+            <tr><th scope="row">9° y 10°</th><td>100%</td><td>75%</td></tr>
+          </tbody>
+        </table>
+        <p><a class="boton" href="https://www.fime.uanl.mx/tramites/becas/" target="_blank" rel="noopener">Ir a Trámites de becas de la FIME</a></p>
+      </article>
+      <article id="fundacion" class="uanl">
+        <p class="nivel">2do sector: Uni</p>
+        <h2>Beca de Sostenimiento (Fundación UANL)</h2>
+        <!-- figure + img + figcaption: imagen con pie de foto -->
+        <figure>
+          <img class="logo-emp" src="https://www.uanl.mx/wp-content/uploads/2020/08/Escudo-UANL-color.png" alt="Logo de Universidad Autónoma de Nuevo León" height="70" loading="lazy">
+        </figure>
+        <p>La Fundación UANL ofrece varios tipos de beca (movilidad internacional, inglés, empleabilidad, transporte y más). La de sostenimiento es un apoyo mensual para cubrir gastos del día a día, como transporte y alimentación.</p>
+        <p>Es la beca más práctica del conjunto, porque entrega dinero cada mes. A cambio, su trámite pide más documentos, sobre todo comprobantes de ingresos de la familia.</p>
+        <!-- dl / dt / dd: lista de datos con su descripción -->
+        <dl>
+          <dt>Apoyo</dt><dd>$1,500 al mes durante 1 semestre</dd>
+          <dt>Documentos</dt><dd>Solicitud, carta de consentimiento y carta compromiso (impresas y llenadas a mano), acta de nacimiento, comprobante de domicilio y comprobantes de ingresos de la familia</dd>
+          <dt>Importante</dt><dd>Los comprobantes deben tener fecha de máximo tres meses; la recepción depende de que el programa tenga disponibilidad</dd>
+          <dt>Contacto</dt><dd>becas.uanl@uanl.mx, Ventanilla 11 y 12 del Departamento de Becas</dd>
+        </dl>
+        <!-- iframe: incrusta el mapa de Google Maps -->
+        <iframe class="mapa" src="https://maps.google.com/maps?hl=es&output=embed&q=Departamento%20de%20Becas%20UANL%20Capilla%20Alfonsina%20Ciudad%20Universitaria%20San%20Nicol%C3%A1s%20de%20los%20Garza" title="Mapa del Departamento de Becas" loading="lazy"></iframe>
+        <p><a class="boton" href="https://www.uanl.mx/tramites/becas-fundacion-uanl/" target="_blank" rel="noopener">Ir a Becas Fundación UANL</a></p>
+      </article>
+      <article id="santander" class="san">
+        <p class="nivel">3er sector: Empresa</p>
+        <h2>Becas Santander (Apoyo a la Manutención)</h2>
+        <!-- figure + img + figcaption: imagen con pie de foto -->
+        <figure>
+          <img class="logo-emp" src="https://commons.wikimedia.org/wiki/Special:FilePath/Banco_Santander_Logotipo.svg?width=300" alt="Logo de Santander México" height="70" loading="lazy">
+        </figure>
+        <p>Santander México convoca esta beca para ayudar a jóvenes de educación superior a continuar sus estudios. Se entrega una sola vez y es directa a la persona beneficiaria.</p>
+        <p>Es la única beca del conjunto que viene de una empresa privada. Tiene pocos lugares, 300 en total, por lo que conviene estar atento a la apertura de la siguiente convocatoria.</p>
+        <!-- dl / dt / dd: lista de datos con su descripción -->
+        <dl>
+          <dt>Apoyo</dt><dd>$9,000 de entrega única, para 300 becas</dd>
+          <dt>Para quién</dt><dd>Jóvenes de 16 años cumplidos inscritos en educación superior técnica, licenciatura, maestría o doctorado, en instituciones públicas o privadas</dd>
+          <dt>Cómo se solicita</dt><dd>En línea, en dos fases; la primera es la inscripción inicial</dd>
+        </dl>
+        <p><a class="boton" href="https://app.santanderopenacademy.com" target="_blank" rel="noopener">Ir a Santander Open Academy</a></p>
+      </article>
+      <article id="gobierno" class="gob">
+        <p class="nivel">4to sector: Gobierno</p>
+        <h2>Escribiendo el Futuro</h2>
+        <!-- figure + img + figcaption: imagen con pie de foto -->
+        <figure>
+          <img class="logo-emp" src="img/gobierno.png" alt="Logo de Gobierno de México (Becas para el Bienestar)" height="70" loading="lazy">
+        </figure>
+        <p>Es la beca federal de educación superior. Entrega apoyo económico a estudiantes de licenciatura, técnico superior universitario o profesional asociado en instituciones públicas.</p>
+        <p>Está dirigida sobre todo a estudiantes de hogares con bajos ingresos y de escuelas consideradas prioritarias.</p>
+        <!-- dl / dt / dd: lista de datos con su descripción -->
+        <dl>
+          <dt>Apoyo</dt><dd>$5,800 cada dos meses</dd>
+          <dt>Para quién</dt><dd>Estudiantes en modalidad escolarizada de una institución pública de educación superior prioritaria, con CURP vigente</dd>
+          <dt>Cómo se solicita</dt><dd>Registro en línea por el Sistema Único de Beneficiarios de Educación Superior (SUBES)</dd>
+          <dt>Fechas</dt><dd>Del 16 al 27 de febrero y del 18 al 30 de septiembre</dd>
+        </dl>
+        <p><a class="boton" href="https://www.gob.mx/becasbenitojuarez/es/articulos/conoce-todo-sobre-la-beca-jovenes-escribiendo-el-futuro" target="_blank" rel="noopener">Ir a Becas para el Bienestar</a></p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
