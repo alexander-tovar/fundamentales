@@ -12,16 +12,29 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- Iconos: cada <symbol> se dibuja una vez y se reutiliza con <svg><use href="#i-nombre"/></svg> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2"/></symbol>
+    <symbol id="i-work" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  </svg>
   <!-- header: cabecera. nav: menú. Los href con # saltan a la sección con ese id -->
   <header class="cabecera">
     <a class="logo" href="#inicio">AF6</a>
-    <button id="btn-menu" aria-expanded="false" aria-controls="menu">Menú</button>
+    <button id="btn-menu" aria-expanded="false" aria-controls="menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg> Menú</button>
     <nav id="menu" aria-label="Principal">
       <ul>
-        <li><a href="#deere">John Deere</a></li>
-        <li><a href="#schneider">Schneider Electric</a></li>
-        <li><a href="#ibm">IBM</a></li>
-        <li><a href="#accenture">Accenture</a></li>
+        <li><a href="#deere"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> John Deere</a></li>
+        <li><a href="#schneider"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> Schneider Electric</a></li>
+        <li><a href="#ibm"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> IBM</a></li>
+        <li><a href="#accenture"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> Accenture</a></li>
       </ul>
     </nav>
   </header>
@@ -36,31 +49,32 @@
     <!-- section: bloque temático. article: contenido independiente (una empresa) -->
     <section id="empresas">
       <article id="deere">
-        <h2>John Deere</h2>
+        <h2><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> John Deere</h2>
         <!-- figure + img + figcaption: imagen con pie de foto -->
         <figure>
           <img class="logo-emp" src="https://logodownload.org/wp-content/uploads/2019/09/john-deere-logo.png" alt="Logo de John Deere" height="70" loading="lazy">
-          
+        </figure>
         <p>John Deere es una corporación global dedicada al diseño y manufactura de maquinaria avanzada para los sectores agrícola, de construcción, forestal y de jardinería.</p>
         <p>En el ámbito tecnológico, la empresa ha transformado su modelo de negocio tradicional para liderar la agricultura de precisión. Esto significa que sus equipos actuales funcionan como plataformas tecnológicas complejas que integran sensores de recopilación de datos, sistemas de conectividad IoT (Internet de las Cosas) y desarrollo de software especializado.</p>
         <p>Esta integración tecnológica tiene como propósito principal optimizar las operaciones en el campo; el software y los sensores trabajan en conjunto para automatizar procesos, analizar el terreno en tiempo real y tomar decisiones basadas en datos, logrando que los productores puedan maximizar su rendimiento y producir más utilizando menos recursos.</p>
         <!-- dl / dt / dd: lista de datos con su descripción -->
         <dl>
-          <dt>Giro</dt><dd>Maquinaria agrícola y de construcción, tecnología de precisión</dd>
-          <dt>Ubicación</dt><dd>Monterrey y San Pedro, N. L.</dd>
-          <dt>Tecnologías</dt><dd>Software embebido, datos, automatización, IoT</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-work"/></svg> Giro</dt><dd>Maquinaria agrícola y de construcción, tecnología de precisión</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación</dt><dd>Monterrey y San Pedro, N. L.</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg> Tecnologías</dt><dd>Software embebido, datos, automatización, IoT</dd>
         </dl>
+        <p class="mapa-titulo"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación en el mapa</p>
         <!-- iframe: incrusta otra página, aquí el mapa de Google Maps -->
         <iframe class="mapa" src="https://maps.google.com/maps?hl=es&output=embed&q=John%20Deere%20Monterrey%2C%20Nuevo%20Le%C3%B3n" title="Mapa de John Deere" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <h3>Puestos encontrados a los que podria aplicar:</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg> Puestos encontrados a los que podría aplicar:</h3>
         <ul>
-          <li>Practicante de Software Embebido</li>
-          <li>Practicante de Desarrollo de Firmware</li>
-          <li>Practicante de Ingeniería de Software</li>
+          <li><span class="puesto">Practicante de Software Embebido</span> <button type="button" class="copiar" data-copiar="Practicante de Software Embebido"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante de Desarrollo de Firmware</span> <button type="button" class="copiar" data-copiar="Practicante de Desarrollo de Firmware"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante de Ingeniería de Software</span> <button type="button" class="copiar" data-copiar="Practicante de Ingeniería de Software"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
         </ul>
       </article>
       <article id="schneider">
-        <h2>Schneider Electric</h2>
+        <h2><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> Schneider Electric</h2>
         <!-- figure + img + figcaption: imagen con pie de foto -->
         <figure>
           <img class="logo-emp" src="https://commons.wikimedia.org/wiki/Special:FilePath/Schneider_Electric_2007.svg?width=300" alt="Logo de Schneider Electric" height="70" loading="lazy">
@@ -70,22 +84,23 @@
         <p>La empresa impulsa la investigación aplicada a través de su Centro de Desarrollo e Innovación ubicado en el Parque de Investigación e Innovación Tecnológica (PIIT). En estas instalaciones, los equipos de ingeniería se dedican a la creación y mejora continua de productos tecnológicos, manteniendo además programas de colaboración con universidades para formar y reclutar talento en estas áreas de especialidad.</p>
         <!-- dl / dt / dd: lista de datos con su descripción -->
         <dl>
-          <dt>Giro</dt><dd>Electricidad, automatización industrial y digitalización</dd>
-          <dt>Ubicación</dt><dd>PIIT, Apodaca, N. L.</dd>
-          <dt>Tecnologías</dt><dd>IIoT, software industrial, SAP</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-work"/></svg> Giro</dt><dd>Electricidad, automatización industrial y digitalización</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación</dt><dd>PIIT, Apodaca, N. L.</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg> Tecnologías</dt><dd>IIoT, software industrial, SAP</dd>
         </dl>
+        <p class="mapa-titulo"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación en el mapa</p>
         <!-- iframe: incrusta otra página, aquí el mapa de Google Maps -->
         <iframe class="mapa" src="https://maps.google.com/maps?hl=es&output=embed&q=Schneider%20Electric%20PIIT%20Apodaca%2C%20Nuevo%20Le%C3%B3n" title="Mapa de Schneider Electric" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <h3>Puestos encontrados a los que podria aplicar:</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg> Puestos encontrados a los que podría aplicar:</h3>
         <ul>
-          <li>Practicante de Desarrollo SAP</li>
-          <li>Practicante de IT</li>
-          <li>Practicante en Gestión de Datos</li>
+          <li><span class="puesto">Practicante de Desarrollo SAP</span> <button type="button" class="copiar" data-copiar="Practicante de Desarrollo SAP"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante de IT</span> <button type="button" class="copiar" data-copiar="Practicante de IT"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante en Gestión de Datos</span> <button type="button" class="copiar" data-copiar="Practicante en Gestión de Datos"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
         </ul>
         
       </article>
       <article id="ibm">
-        <h2>IBM</h2>
+        <h2><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> IBM</h2>
         <!-- figure + img + figcaption: imagen con pie de foto -->
         <figure>
           <img class="logo-emp" src="https://commons.wikimedia.org/wiki/Special:FilePath/IBM_logo.svg?width=300" alt="Logo de IBM" height="70" loading="lazy">
@@ -95,21 +110,22 @@
         <p>La compañía cuenta con operaciones establecidas en Monterrey, NL. Desde esta ubicación, no solo implementan estos servicios tecnológicos, sino que también integran talento emergente a sus proyectos de desarrollo a través de Blue Journey, su programa estructurado de prácticas profesionales.</p>
         <!-- dl / dt / dd: lista de datos con su descripción -->
         <dl>
-          <dt>Giro</dt><dd>Nube híbrida, inteligencia artificial y consultoría</dd>
-          <dt>Ubicación</dt><dd>Monterrey, N. L.</dd>
-          <dt>Tecnologías</dt><dd>Java, Angular, Node.js, Python</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-work"/></svg> Giro</dt><dd>Nube híbrida, inteligencia artificial y consultoría</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación</dt><dd>Monterrey, N. L.</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg> Tecnologías</dt><dd>Java, Angular, Node.js, Python</dd>
         </dl>
+        <p class="mapa-titulo"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación en el mapa</p>
         <!-- iframe: incrusta otra página, aquí el mapa de Google Maps -->
         <iframe class="mapa" src="https://maps.google.com/maps?hl=es&output=embed&q=IBM%20Monterrey%2C%20Nuevo%20Le%C3%B3n" title="Mapa de IBM" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <h3>Puestos encontrados a los que podria aplicar:</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg> Puestos encontrados a los que podría aplicar:</h3>
         <ul>
-          <li>Blue Journey (programa de prácticas profesionales) </li>
-          <li>Student Intern</li>
-          <li>Prácticante en IBM Consulting</li>
+          <li><span class="puesto">Blue Journey (programa de prácticas profesionales)</span> <button type="button" class="copiar" data-copiar="Blue Journey"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Student Intern</span> <button type="button" class="copiar" data-copiar="Student Intern"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante en IBM Consulting</span> <button type="button" class="copiar" data-copiar="Practicante en IBM Consulting"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
         </ul>
       </article>
       <article id="accenture">
-        <h2>Accenture</h2>
+        <h2><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg> Accenture</h2>
         <!-- figure + img + figcaption: imagen con pie de foto -->
         <figure>
           <img class="logo-emp" src="https://commons.wikimedia.org/wiki/Special:FilePath/Accenture.svg?width=300" alt="Logo de Accenture" height="70" loading="lazy">
@@ -120,20 +136,38 @@
         <p>La empresa cuenta con oficinas en Monterrey. Desde esta ubicación, Accenture busca activamente talento emergente en el área de sistemas, ingeniería y programación, publicando constantemente oportunidades y vacantes para puestos de desarrollador. Esto la convierte en un entorno ideal para estructurar requerimientos, trabajar con repositorios y aplicar lógica de desarrollo en soluciones digitales a gran escala desde el inicio de tu trayectoria profesional.</p>
         <!-- dl / dt / dd: lista de datos con su descripción -->
         <dl>
-          <dt>Giro</dt><dd>Consultoría y servicios de tecnología</dd>
-          <dt>Ubicación</dt><dd>Monterrey, N. L.</dd>
-          <dt>Tecnologías</dt><dd>Software, nube, datos e inteligencia artificial</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-work"/></svg> Giro</dt><dd>Consultoría y servicios de tecnología</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación</dt><dd>Monterrey, N. L.</dd>
+          <dt><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg> Tecnologías</dt><dd>Software, nube, datos e inteligencia artificial</dd>
         </dl>
+        <p class="mapa-titulo"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ubicación en el mapa</p>
         <!-- iframe: incrusta otra página, aquí el mapa de Google Maps -->
         <iframe class="mapa" src="https://maps.google.com/maps?hl=es&output=embed&q=Accenture%20Monterrey%2C%20Nuevo%20Le%C3%B3n" title="Mapa de Accenture" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <h3>Puestos encontrados a los que podría aplicar:</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg> Puestos encontrados a los que podría aplicar:</h3>
         <ul>
-          <li>Practicante de IT</li>
-          <li>Practicante de Desarrollo de Software</li>
-          <li>Practicante de Consultoría Tecnológica</li>
+          <li><span class="puesto">Practicante de IT</span> <button type="button" class="copiar" data-copiar="Practicante de IT"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante de Desarrollo de Software</span> <button type="button" class="copiar" data-copiar="Practicante de Desarrollo de Software"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
+          <li><span class="puesto">Practicante de Consultoría Tecnológica</span> <button type="button" class="copiar" data-copiar="Practicante de Consultoría Tecnológica"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Copiar</button></li>
         </ul>
       </article>
     </section>
   </main>
+
+  <!-- Ventana emergente (pop-up) reutilizable: main.js cambia su título, texto e icono -->
+  <dialog id="modal" aria-labelledby="modal-titulo" aria-describedby="modal-texto">
+    <form method="dialog" class="modal-cuerpo">
+      <div class="modal-cab">
+        <span class="modal-icono"><svg class="ico" aria-hidden="true"><use id="modal-icono" href="#i-info"/></svg></span>
+        <h2 id="modal-titulo"></h2>
+      </div>
+      <p id="modal-texto"></p>
+      <div class="modal-acc">
+        <button type="submit" value="ok" id="modal-ok" class="btn-pri">Entendido</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Aviso corto que aparece abajo y desaparece solo -->
+  <div id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

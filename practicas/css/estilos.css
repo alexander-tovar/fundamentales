@@ -54,3 +54,44 @@ footer{padding-bottom:2rem;color:var(--gris)}
 .logo-nombre{display:inline-block;font-weight:800;font-size:1.4rem;color:var(--azul);border:2px solid var(--azul);padding:.3rem .8rem;border-radius:4px}
 .mapa{width:100%;height:300px;border:1px solid var(--borde);border-radius:6px;margin:.5rem 0}
 h3{color:var(--azul);margin:1.25rem 0 .5rem}
+
+/* ===== Iconos ===== */
+:root{--ac:var(--azul2)}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em}
+nav a{display:inline-flex;align-items:center;gap:.4rem}
+#btn-menu{align-items:center;gap:.4rem}
+article h2,h3{display:flex;align-items:center;gap:.5rem}
+article h2 .ico{color:var(--ac)}
+dt .ico{margin-right:.3rem;color:var(--ac)}
+.mapa-titulo{display:flex;align-items:center;gap:.4rem;margin:1rem 0 0;font-weight:600;color:var(--ac)}
+
+/* ===== Lista de puestos con botón de copiar ===== */
+li .puesto{margin-right:.3rem}
+.copiar{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;border-radius:99px;padding:.15rem .7rem;margin:.15rem 0;background:var(--blanco);color:var(--ac);border:1px solid var(--ac)}
+.copiar:hover{background:var(--ac);color:var(--blanco)}
+.copiar:focus-visible,.btn-pri:focus-visible{outline:3px solid var(--azul2);outline-offset:2px}
+
+/* ===== Ventana emergente (pop-up) ===== */
+dialog#modal{border:0;padding:0;border-radius:12px;width:min(92vw,28rem);color:#1c2733;box-shadow:0 20px 50px rgba(0,0,0,.35);overflow:hidden}
+dialog#modal::backdrop{background:rgba(18,58,99,.55)}
+dialog#modal[open]{animation:aparece .18s ease-out}
+.modal-cuerpo{margin:0;padding:1.5rem;border-top:6px solid var(--ac)}
+.modal-cab{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.modal-icono{display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--ac);color:var(--blanco);flex:none}
+.modal-icono .ico{width:1.4rem;height:1.4rem}
+#modal-titulo{margin:0;font-size:1.25rem;color:var(--ac);line-height:1.25}
+#modal-texto{margin:0 0 1.25rem}
+.modal-acc{display:flex;justify-content:flex-end}
+.btn-pri{font:inherit;font-weight:600;border-radius:99px;padding:.55rem 1.2rem;cursor:pointer;background:var(--ac);color:var(--blanco);border:2px solid var(--ac)}
+.btn-pri:hover{filter:brightness(1.1)}
+
+/* ===== Aviso corto (toast) ===== */
+#toast{position:fixed;left:50%;bottom:1.5rem;z-index:20;transform:translate(-50%,20px);max-width:90vw;background:var(--azul);color:var(--blanco);padding:.7rem 1.2rem;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+#toast.visible{opacity:1;transform:translate(-50%,0)}
+
+@keyframes aparece{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  dialog#modal[open]{animation:none}
+  #toast{transition:none}
+}
