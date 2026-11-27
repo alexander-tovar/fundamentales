@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html> le dice al navegador que este archivo es HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Permite acentos y ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace la página responsive -->
+  <meta name="description" content="Intercambio académico en la FIME: UNAM y Universidad Complutense de Madrid, leídos desde un archivo XML.">
+  <title>Intercambio en la FIME | AF02</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome: librería de iconos (se usan con etiquetas <i class="fa-solid ...">) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <a class="logo" href="#inicio"><i class="fa-solid fa-earth-americas"></i> Intercambio AF02</a>
+    <button id="btn-menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars"></i> Menú</button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#universidades">Universidades</a></li>
+        <li><a href="#xml">El XML</a></li>
+        <li><a href="../practicas/">Prácticas</a></li>
+        <li><a href="../becas/">Becas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <h1>Intercambio académico desde la FIME</h1>
+      <p>Esta página es la tercera de mi portafolio y se construye a partir de un archivo <strong>XML</strong> (la actividad AF02). Cada tarjeta se genera con JavaScript leyendo las etiquetas del archivo, así que si cambia el XML, cambia la página.</p>
+      <p>Incluye dos universidades: una <em>nacional</em> y una <em>internacional</em>. Toca el botón de cada tarjeta para ver sus datos en una ventana emergente.</p>
+      <a class="boton" href="AF02.xml" target="_blank" rel="noopener"><i class="fa-solid fa-file-code"></i> Abrir el archivo AF02.xml</a>
+    </section>
+
+    <section id="universidades">
+      <h2><i class="fa-solid fa-building-columns"></i> Universidades</h2>
+      <!-- Aquí JavaScript crea una tarjeta por cada <universidad> del XML -->
+      <div id="tarjetas" class="tarjetas"><p>Cargando datos del XML…</p></div>
+    </section>
+
+    <section id="xml">
+      <h2><i class="fa-solid fa-code"></i> Cómo está hecho el XML</h2>
+      <p>El archivo tiene una etiqueta raíz y siete etiquetas dentro. Así se ve la estructura de cada universidad:</p>
+      <!-- pre + code: muestra código tal cual. &lt; y &gt; escriben los símbolos < y > -->
+      <pre><code>&lt;universidad id="UNI01"&gt;
+  &lt;nombre&gt;…&lt;/nombre&gt;
+  &lt;pais codigo="MX"&gt;…&lt;/pais&gt;
+  &lt;ciudad&gt;…&lt;/ciudad&gt;
+  &lt;tipo&gt;…&lt;/tipo&gt;
+  &lt;programa&gt;…&lt;/programa&gt;
+  &lt;duracion unidad="semestre"&gt;…&lt;/duracion&gt;
+&lt;/universidad&gt;</code></pre>
+      <p>Más información: <a href="https://www.fime.uanl.mx" target="_blank" rel="noopener">FIME</a> · <a href="https://www.uanl.mx/tramites/intercambio-internacional-de-estudiantes-de-la-uanl/" target="_blank" rel="noopener">Intercambio internacional UANL</a></p>
+    </section>
+  </main>
+
+  <!-- dialog: ventana emergente (modal) que se abre con JavaScript -->
+  <dialog id="modal" aria-labelledby="modal-titulo">
+    <h2 id="modal-titulo"></h2>
+    <ul id="modal-datos" class="datos"></ul>
+    <p id="modal-enlace"></p>
+    <button id="modal-cerrar" class="boton"><i class="fa-solid fa-xmark"></i> Cerrar</button>
+  </dialog>
+
+  <footer>
+    <p><small>&copy; <time id="anio" datetime="2026">2026</time> · Proyecto escolar de la FIME, UANL.</small></p>
+  </footer>
+</body>
+</html>

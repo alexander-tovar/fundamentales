@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hoja de estilo CSS: hace que el archivo se vea ordenado al abrirlo en el navegador -->
+<?xml-stylesheet type="text/css" href="AF02.css"?>
+<!--
+  AF02 - Información de intercambio en la FIME (UANL)
+  Contiene dos universidades: una nacional (UNAM) y una internacional
+  (Universidad Complutense de Madrid).
+  Estructura: 1 etiqueta raíz + 7 etiquetas (universidad, nombre, pais,
+  ciudad, tipo, programa, duracion).
+-->
+<!-- DTD: reglas que definen qué etiquetas y atributos son válidos -->
+<!DOCTYPE intercambios_fime [
+  <!ELEMENT intercambios_fime (universidad+)>
+  <!ELEMENT universidad (nombre, pais, ciudad, tipo, programa, duracion)>
+  <!ATTLIST universidad id ID #REQUIRED>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT pais (#PCDATA)>
+  <!ATTLIST pais codigo CDATA #REQUIRED>
+  <!ELEMENT ciudad (#PCDATA)>
+  <!ELEMENT tipo (#PCDATA)>
+  <!ELEMENT programa (#PCDATA)>
+  <!ELEMENT duracion (#PCDATA)>
+  <!ATTLIST duracion unidad (semestre|anual) #REQUIRED>
+]>
+<intercambios_fime> <!-- Etiqueta raíz -->
+
+  <!-- Universidad nacional -->
+  <universidad id="UNI01">
+    <nombre>Universidad Nacional Autónoma de México (UNAM)</nombre>
+    <pais codigo="MX">México</pais>
+    <ciudad>Ciudad de México</ciudad>
+    <tipo>Nacional</tipo>
+    <programa>Movilidad Estudiantil Nacional de Licenciatura</programa>
+    <duracion unidad="semestre">1 semestre (de agosto a diciembre)</duracion>
+  </universidad>
+
+  <!-- Universidad internacional -->
+  <universidad id="UNI02">
+    <nombre>Universidad Complutense de Madrid (UCM)</nombre>
+    <pais codigo="ES">España</pais>
+    <ciudad>Madrid</ciudad>
+    <tipo>Internacional</tipo>
+    <programa>Intercambio por convenio (no Erasmus)</programa>
+    <duracion unidad="semestre">1 semestre (de septiembre a enero)</duracion>
+  </universidad>
+
+</intercambios_fime>

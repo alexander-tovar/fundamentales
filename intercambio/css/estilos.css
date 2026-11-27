@@ -1,0 +1,49 @@
+/* Variables: colores y medidas de toda la página */
+:root{--azul:#123A63;--azul2:#1F6FB2;--gris:#5B6B7B;--fondo:#F4F6F8;--borde:#D3DBE3;--blanco:#fff;--ac:var(--azul2)}
+.UNI01{--ac:#2E7D32}.UNI02{--ac:#8B1E3F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:400 1rem/1.6 "Public Sans",system-ui,sans-serif;color:#1c2733;background:var(--fondo)}
+a{color:var(--azul2)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--azul2);outline-offset:2px}
+.cabecera{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem 1.25rem;background:var(--azul);color:var(--blanco)}
+.logo{font-weight:800;color:var(--blanco);text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:1rem;margin:0;padding:0;list-style:none}
+nav a{color:var(--blanco);text-decoration:none;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+#btn-menu{display:none;background:none;border:1px solid var(--blanco);color:var(--blanco);padding:.35rem .8rem;border-radius:4px;font:inherit}
+main,footer{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+.hero{padding:3rem 0 1rem}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;font-weight:800;color:var(--azul);margin:0 0 1rem;max-width:20ch}
+h2{font-size:1.6rem;color:var(--azul);margin:2.5rem 0 1rem}
+p{max-width:70ch}
+/* Botones */
+.boton{display:inline-flex;align-items:center;gap:.5rem;background:var(--ac);color:var(--blanco);text-decoration:none;font:600 1rem "Public Sans",sans-serif;padding:.7rem 1.3rem;border:0;border-radius:99px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .15s,filter .15s}
+.boton:hover{transform:translateY(-2px);filter:brightness(1.1)}
+/* Tarjetas de universidades */
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem}
+.tarjeta{background:var(--blanco);border:1px solid var(--borde);border-top:6px solid var(--ac);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.foto{position:relative;height:160px;display:grid;place-items:center;color:var(--blanco);font-size:3rem;background:linear-gradient(135deg,var(--ac),var(--azul))}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cuerpo{padding:1.25rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.logo-uni{height:56px;max-width:180px;object-fit:contain;object-position:left}
+.logo-nombre{font-weight:800;color:var(--ac)}
+.insignia{align-self:flex-start;background:var(--ac);color:var(--blanco);font-size:.8rem;font-weight:600;padding:.15rem .7rem;border-radius:99px}
+.tarjeta h3{margin:.25rem 0;color:var(--ac);font-size:1.25rem}
+.datos{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.datos i{color:var(--ac);width:1.4rem;text-align:center}
+.acciones{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:auto;padding-top:.75rem}
+.enlace{display:inline-flex;align-items:center;gap:.4rem;font-weight:600}
+pre{background:#0B2545;color:#dbe6f3;padding:1rem;border-radius:8px;overflow-x:auto}
+/* Ventana emergente */
+dialog{border:0;border-top:8px solid var(--ac);border-radius:10px;padding:1.5rem 1.75rem;max-width:30rem;width:calc(100% - 2rem);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(11,37,69,.6)}
+dialog h2{margin:0 0 1rem;color:var(--ac);font-size:1.3rem}
+footer{padding:2rem 1.25rem;color:var(--gris)}
+@media (max-width:700px){
+  #btn-menu{display:block}
+  nav{width:100%}
+  nav ul{display:none;flex-direction:column;gap:.5rem;padding-top:.5rem}
+  nav ul.abierto{display:flex}
+  .tarjetas{grid-template-columns:1fr}
+}

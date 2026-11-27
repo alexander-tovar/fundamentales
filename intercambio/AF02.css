@@ -1,0 +1,14 @@
+/* Estilos para AF02.xml: en XML hay que indicar cómo se muestra cada etiqueta */
+intercambios_fime{display:block;max-width:44rem;margin:0 auto;padding:2rem 1rem;background:#F4F6F8;font-family:system-ui,"Segoe UI",sans-serif;color:#1c2733}
+intercambios_fime::before{content:"Intercambios en la FIME";display:block;font-size:2rem;font-weight:800;color:#123A63;margin-bottom:1.5rem}
+universidad{display:block;background:#fff;border:1px solid #D3DBE3;border-left:8px solid #1F6FB2;border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+universidad[id="UNI01"]{border-left-color:#2E7D32}
+universidad[id="UNI02"]{border-left-color:#8B1E3F}
+nombre{display:block;font-size:1.3rem;font-weight:800;color:#123A63;margin-bottom:.6rem}
+pais,ciudad,tipo,programa,duracion{display:block;margin:.25rem 0}
+pais::before{content:"País: ";font-weight:600}
+pais::after{content:" (" attr(codigo) ")";color:#5B6B7B}
+ciudad::before{content:"Ciudad: ";font-weight:600}
+tipo::before{content:"Tipo: ";font-weight:600}
+programa::before{content:"Programa: ";font-weight:600}
+duracion::before{content:"Duración: ";font-weight:600}
